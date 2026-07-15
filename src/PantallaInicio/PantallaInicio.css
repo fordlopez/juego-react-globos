@@ -1,0 +1,346 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.inicio-body {
+  font-family: 'Nunito', 'Comic Sans MS', 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #87CEEB 0%, #B8E6FF 40%, #A8E6CF 70%, #6BCB77 100%);
+  position: relative;
+  overflow-x: hidden;
+  padding: 20px;
+  color: #4a4a4a;
+}
+
+/* Nubes decorativas */
+.inicio-cloud {
+  position: absolute;
+  background: white;
+  border-radius: 60px;
+  opacity: 0.85;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  pointer-events: none;
+}
+
+.inicio-cloud-1 {
+  top: 40px;
+  left: 5%;
+  width: 120px;
+  height: 60px;
+}
+
+.inicio-cloud-1::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+}
+
+.inicio-cloud-2 {
+  top: 80px;
+  right: 10%;
+  width: 100px;
+  height: 50px;
+  opacity: 0.7;
+}
+
+.inicio-cloud-2::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  width: 55px;
+  height: 55px;
+  background: white;
+  border-radius: 50%;
+}
+
+.inicio-cloud-3 {
+  top: 150px;
+  left: 15%;
+  width: 80px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+/* Globos decorativos flotando */
+.inicio-balloon-float {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.6;
+  animation: inicio-float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.inicio-balloon-float-1 { top: 120px; right: 5%; }
+.inicio-balloon-float-2 { top: 200px; left: 3%; font-size: 35px; animation-delay: 1s; animation-duration: 5s; opacity: 0.5; }
+.inicio-balloon-float-3 { bottom: 180px; right: 8%; font-size: 30px; animation-delay: 0.5s; animation-duration: 4.5s; opacity: 0.4; }
+.inicio-balloon-float-4 { bottom: 250px; left: 10%; font-size: 28px; animation-delay: 2s; animation-duration: 5.5s; opacity: 0.45; }
+
+@keyframes inicio-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes inicio-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes inicio-wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* Contenedor */
+.inicio-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título principal */
+.inicio-main-title {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: inicio-bounce 3s ease-in-out infinite;
+}
+
+.inicio-main-title .inicio-emoji {
+  font-size: 52px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.inicio-main-title h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.15), 0 0 20px rgba(255,255,255,0.3);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.inicio-main-title p {
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-top: 12px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Ilustración de globos */
+.inicio-balloon-illustration {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 80px;
+  animation: inicio-wiggle 4s ease-in-out infinite;
+}
+
+/* Tarjeta principal */
+.inicio-card {
+  background: white;
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+/* Campo de nombre */
+.inicio-input-group {
+  margin-bottom: 28px;
+}
+
+.inicio-input-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.inicio-input-field {
+  width: 100%;
+  padding: 16px 22px;
+  font-size: 18px;
+  border: 3px solid #E8E8E8;
+  border-radius: 18px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.inicio-input-field:focus {
+  border-color: #4D96FF;
+}
+
+/* Caja de instrucciones */
+.inicio-instructions-box {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFF3CD 100%);
+  border-radius: 20px;
+  padding: 22px;
+  margin-bottom: 28px;
+  border: 2px solid #FFE082;
+}
+
+.inicio-instructions-box h3 {
+  margin: 0 0 14px 0;
+  font-size: 20px;
+  color: #E6A800;
+  font-weight: 800;
+}
+
+.inicio-instruction-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #5a4a00;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.inicio-instruction-item:last-child {
+  margin-bottom: 0;
+}
+
+.inicio-instruction-icon {
+  font-size: 22px;
+}
+
+/* Tabla de puntos */
+.inicio-scores-title {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  color: #4a4a4a;
+  font-weight: 800;
+  text-align: center;
+}
+
+.inicio-scores-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.inicio-score-card {
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  border: 2px solid;
+  transition: transform 0.3s;
+  cursor: default;
+}
+
+.inicio-score-card:hover {
+  transform: translateY(-3px);
+}
+
+.inicio-score-balloon-emoji {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+.inicio-score-balloon-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.inicio-score-balloon-value {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* Colores de tarjetas de puntos */
+.inicio-score-red {
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFCCCC 100%);
+  border-color: #FF9999;
+}
+.inicio-score-red .inicio-score-balloon-name { color: #CC0000; }
+.inicio-score-red .inicio-score-balloon-value { color: #FF5D5D; }
+
+.inicio-score-green {
+  background: linear-gradient(135deg, #E5F5E5 0%, #CCF0CC 100%);
+  border-color: #99DD99;
+}
+.inicio-score-green .inicio-score-balloon-name { color: #228B22; }
+.inicio-score-green .inicio-score-balloon-value { color: #6BCB77; }
+
+.inicio-score-blue {
+  background: linear-gradient(135deg, #E5F0FF 0%, #CCE5FF 100%);
+  border-color: #99CCFF;
+}
+.inicio-score-blue .inicio-score-balloon-name { color: #0066CC; }
+.inicio-score-blue .inicio-score-balloon-value { color: #4D96FF; }
+
+.inicio-score-black {
+  background: linear-gradient(135deg, #E8E8E8 0%, #D0D0D0 100%);
+  border-color: #AAAAAA;
+}
+.inicio-score-black .inicio-score-balloon-name { color: #444444; }
+.inicio-score-black .inicio-score-balloon-value { color: #333333; }
+
+/* Botón comenzar */
+.inicio-btn-start {
+  width: 100%;
+  padding: 18px;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #6BCB77 0%, #4CAF50 100%);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s;
+  box-shadow: 0 6px 20px rgba(107,203,119,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inicio-btn-start:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(107,203,119,0.4);
+}
+
+/* Césped decorativo */
+.inicio-grass-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(180deg, #6BCB77 0%, #4CAF50 100%);
+  border-radius: 20px 20px 0 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inicio-main-title h1 { font-size: 32px; }
+  .inicio-main-title p { font-size: 16px; }
+  .inicio-scores-grid { grid-template-columns: 1fr; }
+  .inicio-card { padding: 25px 20px; }
+  .inicio-btn-start { font-size: 18px; padding: 15px; }
+  .inicio-balloon-illustration { font-size: 60px; }
+}
+
+@media (max-width: 480px) {
+  .inicio-body { padding: 10px; }
+  .inicio-main-title h1 { font-size: 26px; }
+}

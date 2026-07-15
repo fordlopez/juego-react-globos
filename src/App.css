@@ -1,0 +1,418 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', 'Comic Sans MS', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4a4a4a;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ============================================
+   2. FONDO GLOBAL DEL JUEGO
+   ============================================ */
+
+.app-fondo {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #87CEEB 0%,
+    #B8E6FF 40%,
+    #A8E6CF 70%,
+    #6BCB77 100%
+  );
+  position: relative;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* ============================================
+   3. NUBES GLOBALES (compartidas)
+   ============================================ */
+
+.app-nube {
+  position: absolute;
+  background: white;
+  border-radius: 60px;
+  opacity: 0.85;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-nube-1 {
+  top: 40px;
+  left: 5%;
+  width: 120px;
+  height: 60px;
+}
+
+.app-nube-1::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+}
+
+.app-nube-2 {
+  top: 80px;
+  right: 10%;
+  width: 100px;
+  height: 50px;
+  opacity: 0.7;
+}
+
+.app-nube-2::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  width: 55px;
+  height: 55px;
+  background: white;
+  border-radius: 50%;
+}
+
+.app-nube-3 {
+  top: 150px;
+  left: 15%;
+  width: 80px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+/* ============================================
+   4. GLOBOS FLOTANTES GLOBALES
+   ============================================ */
+
+.app-globo-float {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.6;
+  animation: app-float 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-globo-float-1 { top: 120px; right: 5%; }
+.app-globo-float-2 { top: 200px; left: 3%; font-size: 35px; animation-delay: 1s; animation-duration: 5s; opacity: 0.5; }
+.app-globo-float-3 { bottom: 180px; right: 8%; font-size: 30px; animation-delay: 0.5s; animation-duration: 4.5s; opacity: 0.4; }
+.app-globo-float-4 { bottom: 250px; left: 10%; font-size: 28px; animation-delay: 2s; animation-duration: 5.5s; opacity: 0.45; }
+
+/* ============================================
+   5. CESPED INFERIOR GLOBAL
+   ============================================ */
+
+.app-cesped {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(180deg, #6BCB77 0%, #4CAF50 100%);
+  border-radius: 20px 20px 0 0;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   6. ANIMACIONES GLOBALES
+   ============================================ */
+
+@keyframes app-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes app-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes app-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes app-wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes app-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes app-pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ============================================
+   7. UTILIDADES COMUNES
+   ============================================ */
+
+.app-contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.app-contenedor-ancho {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.app-contenedor-resultado {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.app-tarjeta {
+  background: white;
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+.app-tarjeta-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.app-tarjeta-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.app-titulo-seccion {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  color: #4a4a4a;
+  font-weight: 800;
+  text-align: center;
+}
+
+.app-separador {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 30px;
+  opacity: 0.3;
+}
+
+/* ============================================
+   8. BOTONES COMUNES
+   ============================================ */
+
+.app-btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.app-btn-verde {
+  background: linear-gradient(135deg, #6BCB77 0%, #4CAF50 100%);
+  box-shadow: 0 6px 20px rgba(107,203,119,0.3);
+}
+
+.app-btn-verde:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(107,203,119,0.4);
+}
+
+.app-btn-azul {
+  background: linear-gradient(135deg, #4D96FF 0%, #357ABD 100%);
+  box-shadow: 0 6px 20px rgba(77,150,255,0.3);
+}
+
+.app-btn-azul:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(77,150,255,0.4);
+}
+
+.app-btn-rosa {
+  background: linear-gradient(135deg, #FF8FAB 0%, #FF6B9D 100%);
+  box-shadow: 0 6px 20px rgba(255,143,171,0.3);
+}
+
+.app-btn-rosa:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255,143,171,0.4);
+}
+
+/* ============================================
+   9. INPUTS COMUNES
+   ============================================ */
+
+.app-input-grupo {
+  margin-bottom: 28px;
+}
+
+.app-input-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.app-input-campo {
+  width: 100%;
+  padding: 16px 22px;
+  font-size: 18px;
+  border: 3px solid #E8E8E8;
+  border-radius: 18px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.app-input-campo:focus {
+  border-color: #4D96FF;
+}
+
+/* ============================================
+   10. PALETA DE COLORES (variables CSS)
+   ============================================ */
+
+:root {
+  --app-azul-cielo: #87CEEB;
+  --app-amarillo: #FFD93D;
+  --app-verde: #6BCB77;
+  --app-rosa: #FF8FAB;
+  --app-rojo: #FF5D5D;
+  --app-azul-brillante: #4D96FF;
+  --app-morado-claro: #C77DFF;
+  --app-blanco: #FFFFFF;
+  --app-negro-suave: #4a4a4a;
+  --app-gris-claro: #E8E8E8;
+}
+
+/* ============================================
+   11. RESPONSIVE GLOBAL
+   ============================================ */
+
+@media (max-width: 768px) {
+  .app-fondo {
+    padding: 15px;
+  }
+
+  .app-contenedor,
+  .app-contenedor-ancho,
+  .app-contenedor-resultado {
+    padding-top: 20px;
+  }
+
+  .app-tarjeta {
+    padding: 25px 20px;
+    border-radius: 24px;
+  }
+
+  .app-btn {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .app-input-campo {
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+
+  .app-globo-float {
+    font-size: 28px;
+  }
+
+  .app-nube {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-fondo {
+    padding: 10px;
+  }
+
+  .app-tarjeta {
+    padding: 20px 15px;
+    border-radius: 20px;
+  }
+
+  .app-btn {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .app-input-label {
+    font-size: 16px;
+  }
+
+  .app-globo-float {
+    display: none;
+  }
+}
+
+/* ============================================
+   12. CLASES DE UTILIDAD EXTRA
+   ============================================ */
+
+.app-texto-centro { text-align: center; }
+.app-texto-izq { text-align: left; }
+.app-texto-der { text-align: right; }
+
+.app-fw-400 { font-weight: 400; }
+.app-fw-600 { font-weight: 600; }
+.app-fw-700 { font-weight: 700; }
+.app-fw-800 { font-weight: 800; }
+
+.app-sombra-suave { box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.app-sombra-media { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.app-sombra-fuerte { box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+
+.app-borde-redondo-sm { border-radius: 12px; }
+.app-borde-redondo-md { border-radius: 20px; }
+.app-borde-redondo-lg { border-radius: 28px; }
+.app-borde-redondo-xl { border-radius: 30px; }
+
+

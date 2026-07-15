@@ -1,0 +1,253 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.juego-body {
+  font-family: 'Nunito', 'Comic Sans MS', 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #87CEEB 0%, #B8E6FF 40%, #A8E6CF 70%, #6BCB77 100%);
+  position: relative;
+  overflow-x: hidden;
+  padding: 20px;
+  color: #4a4a4a;
+}
+
+/* Nubes decorativas */
+.juego-cloud {
+  position: absolute;
+  background: white;
+  border-radius: 60px;
+  opacity: 0.85;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  pointer-events: none;
+}
+
+.juego-cloud-1 {
+  top: 40px;
+  left: 5%;
+  width: 120px;
+  height: 60px;
+}
+
+.juego-cloud-1::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+}
+
+.juego-cloud-2 {
+  top: 80px;
+  right: 10%;
+  width: 100px;
+  height: 50px;
+  opacity: 0.7;
+}
+
+.juego-cloud-2::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  width: 55px;
+  height: 55px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Globos decorativos flotando */
+.juego-balloon-float {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.6;
+  animation: juego-float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.juego-balloon-float-1 { top: 120px; right: 5%; }
+.juego-balloon-float-2 { bottom: 180px; right: 8%; font-size: 30px; animation-delay: 0.5s; animation-duration: 4.5s; opacity: 0.4; }
+
+@keyframes juego-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Contenedor */
+.juego-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Encabezado del juego (HUD)
+   ============================================ */
+.juego-header {
+  background: white;
+  border-radius: 24px;
+  padding: 18px 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.juego-player-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.juego-player-avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #FFD93D 0%, #FFA500 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 3px 10px rgba(255,217,61,0.3);
+}
+
+.juego-player-name-label {
+  font-size: 12px;
+  color: #888;
+  font-weight: 600;
+}
+
+.juego-player-name-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #4a4a4a;
+}
+
+.juego-stat-box {
+  border-radius: 16px;
+  padding: 10px 22px;
+  text-align: center;
+  border: 2px solid;
+}
+
+.juego-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.juego-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.juego-stat-score {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFE082 100%);
+  border-color: #FFD93D;
+}
+.juego-stat-score .juego-stat-label { color: #B8860B; }
+.juego-stat-score .juego-stat-value { color: #CC8800; }
+
+.juego-stat-time {
+  background: linear-gradient(135deg, #FFE5E5 0%, #FF9999 100%);
+  border-color: #FF5D5D;
+}
+.juego-stat-time .juego-stat-label { color: #CC0000; }
+.juego-stat-time .juego-stat-value { color: #CC0000; }
+
+.juego-stat-popped {
+  background: linear-gradient(135deg, #E5F0FF 0%, #99CCFF 100%);
+  border-color: #4D96FF;
+}
+.juego-stat-popped .juego-stat-label { color: #0066CC; }
+.juego-stat-popped .juego-stat-value { color: #0066CC; }
+
+/* ============================================
+   Área de juego
+   ============================================ */
+.juego-area {
+  background: linear-gradient(180deg, #E8F4FD 0%, #D6EBF8 100%);
+  border-radius: 28px;
+  border: 4px dashed #A8D4F0;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(135,206,235,0.2);
+}
+
+.juego-area-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0.4;
+}
+
+.juego-area-placeholder .juego-big-emoji {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.juego-area-placeholder .juego-placeholder-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4D96FF;
+}
+
+.juego-area-placeholder .juego-placeholder-subtitle {
+  font-size: 14px;
+  color: #7AB8E8;
+}
+
+/* Globos decorativos en bordes del área de juego */
+.juego-balloon {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.35;
+  animation: juego-float 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.juego-balloon-1 { top: 15px; left: 20px; }
+.juego-balloon-2 { top: 20px; right: 25px; font-size: 24px; animation-delay: 1s; animation-duration: 4s; opacity: 0.3; }
+.juego-balloon-3 { bottom: 20px; left: 30px; font-size: 22px; animation-delay: 0.5s; animation-duration: 6s; opacity: 0.25; }
+.juego-balloon-4 { bottom: 15px; right: 20px; font-size: 26px; animation-delay: 2s; animation-duration: 4.5s; opacity: 0.3; }
+.juego-balloon-5 { top: 50%; left: 10px; font-size: 20px; animation-delay: 1.5s; animation-duration: 5.5s; opacity: 0.2; }
+.juego-balloon-6 { top: 40%; right: 12px; font-size: 23px; animation-delay: 0.8s; animation-duration: 4s; opacity: 0.25; }
+
+/* Césped decorativo */
+.juego-grass-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(180deg, #6BCB77 0%, #4CAF50 100%);
+  border-radius: 20px 20px 0 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .juego-header { justify-content: center; }
+  .juego-stat-box { padding: 8px 14px; }
+  .juego-stat-value { font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+  .juego-body { padding: 10px; }
+}
