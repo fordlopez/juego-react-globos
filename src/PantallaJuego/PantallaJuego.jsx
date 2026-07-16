@@ -1,10 +1,18 @@
 
- import './PantallaJuego.css'
-function PantallaJuego(){
+import { GloboContext } from '../GloboContex/GloboContex';
+import './PantallaJuego.css'
+import React from 'react';
+
+function PantallaJuego() {
+
+  const {
+    tiempo,
+  } = React.useContext(GloboContext)
 
 
-    return (
-   <div className="juego-body">
+
+  return (
+    <div className="juego-body">
       {/* Nubes decorativas */}
       <div className="juego-cloud juego-cloud-1"></div>
       <div className="juego-cloud juego-cloud-2"></div>
@@ -14,10 +22,10 @@ function PantallaJuego(){
       <div className="juego-balloon-float juego-balloon-float-2">🎈</div>
 
       <div className="juego-container">
-        
+
         {/* Encabezado superior (HUD) */}
         <div className="juego-header">
-          
+
           {/* Avatar + Nombre */}
           <div className="juego-player-info">
             <div className="juego-player-avatar">🧒</div>
@@ -36,7 +44,7 @@ function PantallaJuego(){
           {/* Tiempo */}
           <div className="juego-stat-box juego-stat-time">
             <div className="juego-stat-label">⏱️ TIEMPO</div>
-            <div className="juego-stat-value">18s</div>
+            <div className="juego-stat-value">{tiempo}s</div>
           </div>
 
           {/* Globos explotados */}
@@ -49,7 +57,7 @@ function PantallaJuego(){
 
         {/* Área de juego */}
         <div className="juego-area">
-          
+
           {/* Texto indicador del área */}
           <div className="juego-area-placeholder">
             <div className="juego-big-emoji">🎈</div>
@@ -73,7 +81,7 @@ function PantallaJuego(){
       <div className="juego-grass-footer"></div>
     </div>
   );
-    
+
 }
 
-export {PantallaJuego}
+export { PantallaJuego }

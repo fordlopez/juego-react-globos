@@ -4,24 +4,26 @@ import { PantallaInicio } from './PantallaInicio/PantallaInicio'
 import { PantallaJuego } from './PantallaJuego/PantallaJuego'
 import { PantallaFinal } from './PantallaFinal/PantallaFinal'
 import React from 'react'
-import { GloboContex } from './GloboContex/GloboContex'
+import { GloboContext } from './GloboContex/GloboContex'
+
 
 
 function App() {
-      const {
-         pantallIniciar,
-          botonInisiar
-    }=React.useContext(GloboContex)
+  const {
+    pantallaIniciar,
+    pantallaJugar,
+    pantallaFinal
+  } = React.useContext(GloboContext)
 
 
   return (
     <>
-       <PantallaInicio/> 
-
- { pantallIniciar && (<PantallaJuego/>)}
 
 
-{/*  <PantallaFinal/>  */}
+      {pantallaIniciar && (<PantallaInicio />)}
+      {pantallaJugar && (<PantallaJuego />)}
+      {pantallaFinal && (<PantallaFinal />)}
+
     </>
   )
 }
