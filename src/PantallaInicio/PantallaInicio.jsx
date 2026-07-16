@@ -1,14 +1,13 @@
 import React from 'react';
 import './PantallaInicio.css'
-import { GloboContex } from '../GloboContex/GloboContex';
+import { GloboContext } from '../GloboContex/GloboContex';
+function PantallaInicio() {
 
-function PantallaInicio (){
+  const {
+    botonIniciar,
+  } = React.useContext(GloboContext)
 
-    const {
-        botonInisiar
-    }=React.useContext(GloboContex)
-
-    return (
+  return (
     <div className="inicio-body">
       {/* Nubes decorativas */}
       <div className="inicio-cloud inicio-cloud-1"></div>
@@ -22,7 +21,7 @@ function PantallaInicio (){
       <div className="inicio-balloon-float inicio-balloon-float-4">🎈</div>
 
       <div className="inicio-container">
-        
+
         {/* Título principal */}
         <div className="inicio-main-title">
           <span className="inicio-emoji">🎈</span>
@@ -37,13 +36,13 @@ function PantallaInicio (){
 
         {/* Tarjeta principal */}
         <div className="inicio-card">
-          
+
           {/* Campo de nombre */}
           <div className="inicio-input-group">
             <label className="inicio-input-label">👤 ¿Cómo te llamas?</label>
-            <input 
-              type="text" 
-              className="inicio-input-field" 
+            <input
+              type="text"
+              className="inicio-input-field"
               placeholder="Escribe tu nombre aquí..."
             />
           </div>
@@ -68,37 +67,38 @@ function PantallaInicio (){
           {/* Tabla de puntos */}
           <h3 className="inicio-scores-title">🏆 Tabla de Puntos</h3>
           <div className="inicio-scores-grid">
-            
+
             <div className="inicio-score-card inicio-score-red">
               <div className="inicio-score-balloon-emoji">🔴</div>
               <div className="inicio-score-balloon-name">Globo Rojo</div>
               <div className="inicio-score-balloon-value">+1</div>
             </div>
-            
+
             <div className="inicio-score-card inicio-score-green">
               <div className="inicio-score-balloon-emoji">🟢</div>
               <div className="inicio-score-balloon-name">Globo Verde</div>
               <div className="inicio-score-balloon-value">+2</div>
             </div>
-            
+
             <div className="inicio-score-card inicio-score-blue">
               <div className="inicio-score-balloon-emoji">🔵</div>
               <div className="inicio-score-balloon-name">Globo Azul</div>
               <div className="inicio-score-balloon-value">+5</div>
             </div>
-            
+
             <div className="inicio-score-card inicio-score-black">
               <div className="inicio-score-balloon-emoji">⚫</div>
               <div className="inicio-score-balloon-name">Globo Negro</div>
               <div className="inicio-score-balloon-value">-3</div>
             </div>
-            
+
           </div>
 
           {/* Botón comenzar */}
-          <button className="inicio-btn-start" onClick={()=> botonInisiar
-     
-          }>
+          <button className="inicio-btn-start" onClick={() => {
+            botonIniciar();
+
+          }}>
             🎮 Comenzar Juego
           </button>
 
@@ -109,7 +109,7 @@ function PantallaInicio (){
       <div className="inicio-grass-footer"></div>
     </div>
   );
-    
+
 }
 
-export {PantallaInicio}
+export { PantallaInicio }

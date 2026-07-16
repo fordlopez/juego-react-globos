@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
 * {
@@ -29,13 +28,11 @@ body {
 
 .app-fondo {
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    #87CEEB 0%,
-    #B8E6FF 40%,
-    #A8E6CF 70%,
-    #6BCB77 100%
-  );
+  background: linear-gradient(180deg,
+      #87CEEB 0%,
+      #B8E6FF 40%,
+      #A8E6CF 70%,
+      #6BCB77 100%);
   position: relative;
   overflow-x: hidden;
   padding: 20px;
@@ -50,7 +47,7 @@ body {
   background: white;
   border-radius: 60px;
   opacity: 0.85;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   pointer-events: none;
   z-index: 0;
 }
@@ -113,10 +110,37 @@ body {
   z-index: 0;
 }
 
-.app-globo-float-1 { top: 120px; right: 5%; }
-.app-globo-float-2 { top: 200px; left: 3%; font-size: 35px; animation-delay: 1s; animation-duration: 5s; opacity: 0.5; }
-.app-globo-float-3 { bottom: 180px; right: 8%; font-size: 30px; animation-delay: 0.5s; animation-duration: 4.5s; opacity: 0.4; }
-.app-globo-float-4 { bottom: 250px; left: 10%; font-size: 28px; animation-delay: 2s; animation-duration: 5.5s; opacity: 0.45; }
+.app-globo-float-1 {
+  top: 120px;
+  right: 5%;
+}
+
+.app-globo-float-2 {
+  top: 200px;
+  left: 3%;
+  font-size: 35px;
+  animation-delay: 1s;
+  animation-duration: 5s;
+  opacity: 0.5;
+}
+
+.app-globo-float-3 {
+  bottom: 180px;
+  right: 8%;
+  font-size: 30px;
+  animation-delay: 0.5s;
+  animation-duration: 4.5s;
+  opacity: 0.4;
+}
+
+.app-globo-float-4 {
+  bottom: 250px;
+  left: 10%;
+  font-size: 28px;
+  animation-delay: 2s;
+  animation-duration: 5.5s;
+  opacity: 0.45;
+}
 
 /* ============================================
    5. CESPED INFERIOR GLOBAL
@@ -140,34 +164,79 @@ body {
    ============================================ */
 
 @keyframes app-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes app-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes app-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
 }
 
 @keyframes app-wiggle {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(2deg); }
+
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
 }
 
 @keyframes app-fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes app-pop {
-  0% { transform: scale(0.8); opacity: 0; }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ============================================
@@ -203,7 +272,7 @@ body {
   background: white;
   border-radius: 28px;
   padding: 35px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   margin-bottom: 25px;
 }
 
@@ -213,7 +282,7 @@ body {
 
 .app-tarjeta-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .app-titulo-seccion {
@@ -254,32 +323,32 @@ body {
 
 .app-btn-verde {
   background: linear-gradient(135deg, #6BCB77 0%, #4CAF50 100%);
-  box-shadow: 0 6px 20px rgba(107,203,119,0.3);
+  box-shadow: 0 6px 20px rgba(107, 203, 119, 0.3);
 }
 
 .app-btn-verde:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(107,203,119,0.4);
+  box-shadow: 0 8px 25px rgba(107, 203, 119, 0.4);
 }
 
 .app-btn-azul {
   background: linear-gradient(135deg, #4D96FF 0%, #357ABD 100%);
-  box-shadow: 0 6px 20px rgba(77,150,255,0.3);
+  box-shadow: 0 6px 20px rgba(77, 150, 255, 0.3);
 }
 
 .app-btn-azul:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(77,150,255,0.4);
+  box-shadow: 0 8px 25px rgba(77, 150, 255, 0.4);
 }
 
 .app-btn-rosa {
   background: linear-gradient(135deg, #FF8FAB 0%, #FF6B9D 100%);
-  box-shadow: 0 6px 20px rgba(255,143,171,0.3);
+  box-shadow: 0 6px 20px rgba(255, 143, 171, 0.3);
 }
 
 .app-btn-rosa:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(255,143,171,0.4);
+  box-shadow: 0 8px 25px rgba(255, 143, 171, 0.4);
 }
 
 /* ============================================
@@ -397,22 +466,58 @@ body {
    12. CLASES DE UTILIDAD EXTRA
    ============================================ */
 
-.app-texto-centro { text-align: center; }
-.app-texto-izq { text-align: left; }
-.app-texto-der { text-align: right; }
+.app-texto-centro {
+  text-align: center;
+}
 
-.app-fw-400 { font-weight: 400; }
-.app-fw-600 { font-weight: 600; }
-.app-fw-700 { font-weight: 700; }
-.app-fw-800 { font-weight: 800; }
+.app-texto-izq {
+  text-align: left;
+}
 
-.app-sombra-suave { box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-.app-sombra-media { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-.app-sombra-fuerte { box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+.app-texto-der {
+  text-align: right;
+}
 
-.app-borde-redondo-sm { border-radius: 12px; }
-.app-borde-redondo-md { border-radius: 20px; }
-.app-borde-redondo-lg { border-radius: 28px; }
-.app-borde-redondo-xl { border-radius: 30px; }
+.app-fw-400 {
+  font-weight: 400;
+}
 
+.app-fw-600 {
+  font-weight: 600;
+}
 
+.app-fw-700 {
+  font-weight: 700;
+}
+
+.app-fw-800 {
+  font-weight: 800;
+}
+
+.app-sombra-suave {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.app-sombra-media {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.app-sombra-fuerte {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.app-borde-redondo-sm {
+  border-radius: 12px;
+}
+
+.app-borde-redondo-md {
+  border-radius: 20px;
+}
+
+.app-borde-redondo-lg {
+  border-radius: 28px;
+}
+
+.app-borde-redondo-xl {
+  border-radius: 30px;
+}

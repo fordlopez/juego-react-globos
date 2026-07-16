@@ -1,30 +1,52 @@
-import React, {  useState } from "react"
+import { createContext, useState, useEffect } from "react";
 
-const GloboContex=React.createContext()
+const GloboContext = createContext();
 
-function GloboProvider({children}){
+function GloboProvider({ children }) {
 
-    const [pantallIniciar, inicioFuncion] = useState(false)
-    const [pantallaJugarm,jugarFuncion]=useState(true)
-
-const botonInisiar=()=>{
-inicioFuncion(true)
-jugarFuncion(false)
-}
+    const [pantallaIniciar, setPantallaIniciar] = useState(true);
+    const [pantallaJugar, setPantallaJugar] = useState(false);
+    const [pantallaFinal, setPantallaFinal] = useState(false);
 
 
+    const [tiempo, setTiempo] = useState(10);
+
+    const botonIniciar = () => {
+        setPantallaIniciar(false);
+        setPantallaJugar(true);
+    };
+
+    useEffect(() => {
+        if (pantallaIniciar) return;
+
+        const intervalo = setInterval(() => {
+            setTiempo((prev) => {
+                if (prev <= 1) {
+                    clearInterval(intervalo);
+                    setPantallaJugar(false);
+                    setPantallaFinal(true);
+                    return 0;
+                }
+                return prev - 1;
+            });
+        }, 1000);
+
+        return () => clearInterval(intervalo);
+    }, [pantallaIniciar]);
     return (
+        <GloboContext.Provider
+            value={{
+                tiempo,
 
-      <GloboContex.Provider value={{
-        pantallIniciar,
-        pantallaJugarm,
-        botonInisiar
-
-      }}>
+                pantallaIniciar,
+                pantallaJugar,
+                pantallaFinal,
+                botonIniciar,
+            }}
+        >
             {children}
-        </GloboContex.Provider>
-    )
-
+        </GloboContext.Provider>
+    );
 }
 
-export {GloboContex,GloboProvider}
+export { GloboContext, GloboProvider };
