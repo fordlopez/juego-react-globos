@@ -1,7 +1,12 @@
 
+import React from 'react'
+import { GloboContext } from '../GloboContex/GloboContex'
 import './PantallaFinal.css'
+
+
 function PantallaFinal(){
 
+  const {botonReiniciar} =React.useContext(GloboContext)
     return(
 
   <div className="resultados-body">
@@ -71,7 +76,7 @@ function PantallaFinal(){
           </div>
 
           {/* Botón volver a jugar */}
-          <button className="resultados-btn-restart">
+          <button className="resultados-btn-restart" onClick={botonReiniciar}>
             🔄 Volver a Jugar
           </button>
 

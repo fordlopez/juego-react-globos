@@ -1,15 +1,17 @@
 
 import { GloboContext } from '../GloboContex/GloboContex';
+import { TableroJuego } from '../TableroJueego/TableroJuego';
+
 import './PantallaJuego.css'
+
 import React from 'react';
 
 function PantallaJuego() {
 
   const {
     tiempo,
+    
   } = React.useContext(GloboContext)
-
-
 
   return (
     <div className="juego-body">
@@ -57,12 +59,10 @@ function PantallaJuego() {
 
         {/* Área de juego */}
         <div className="juego-area">
-
+<TableroJuego/>
           {/* Texto indicador del área */}
           <div className="juego-area-placeholder">
-            <div className="juego-big-emoji">🎈</div>
-            <div className="juego-placeholder-title">Área de Juego</div>
-            <div className="juego-placeholder-subtitle">Los globos aparecerán aquí</div>
+       
           </div>
 
           {/* Globos decorativos en bordes */}

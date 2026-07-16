@@ -1,0 +1,81 @@
+/* TableroJuego.css - Simple */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tablero-area {
+  background: #C8E6F5;
+  border-radius: 20px;
+  border: 3px solid #7EC8E3;
+  padding: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tablero-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  aspect-ratio: 1 / 1;
+}
+
+.tablero-celda {
+  background: #E0F0FA;
+  border-radius: 12px;
+  border: 2px solid #B0D9F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.15s;
+  min-height: 50px;
+}
+
+.tablero-celda:hover {
+  transform: scale(1.08);
+  border-color: #4D96FF;
+  z-index: 1;
+}
+
+.tablero-id {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #8BB8D0;
+  font-family: monospace;
+}
+
+.tablero-globo {
+  width: 60%;
+  height: 60%;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.tablero-celda:nth-child(2n) .tablero-globo { animation-delay: 0.3s; }
+.tablero-celda:nth-child(3n) .tablero-globo { animation-delay: 0.6s; }
+.tablero-celda:nth-child(5n) .tablero-globo { animation-delay: 0.9s; }
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.tablero-vacia {
+  background: #E8F4FA;
+  border-style: dashed;
+}
+
+@media (max-width: 600px) {
+  .tablero-area { padding: 10px; }
+  .tablero-grid { gap: 4px; }
+  .tablero-celda { border-radius: 8px; min-height: 40px; }
+  .tablero-id { font-size: 7px; }
+}

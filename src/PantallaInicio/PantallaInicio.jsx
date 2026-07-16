@@ -96,7 +96,7 @@ function PantallaInicio() {
 
           {/* Botón comenzar */}
           <button className="inicio-btn-start" onClick={() => {
-            botonIniciar();
+            botonIniciar(); 
 
           }}>
             🎮 Comenzar Juego
