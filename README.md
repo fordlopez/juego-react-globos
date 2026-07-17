@@ -85,4 +85,3 @@ Con este cambio, cada vez que el componente se re-renderiza o se desmonta, los t
 ### Pantalla de resultados
 ![Pantalla de resultados](./capturas/pantalla-final.png)
 
-> Guarda tus 3 capturas dentro de una carpeta `capturas/` en la raíz del proyecto con esos nombres (o ajusta las rutas de arriba según cómo las llames).
