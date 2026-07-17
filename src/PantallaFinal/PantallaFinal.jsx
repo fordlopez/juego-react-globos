@@ -6,7 +6,7 @@ import './PantallaFinal.css'
 
 function PantallaFinal(){
 
-  const {botonReiniciar} =React.useContext(GloboContext)
+  const {botonReiniciar,puntos,nombre,GloboSX,positivosGB,negativosGB} =React.useContext(GloboContext)
     return(
 
   <div className="resultados-body">
@@ -35,45 +35,76 @@ function PantallaFinal(){
               <div className="resultados-row-label">
                 <span style={{ fontSize: '22px' }}>🧒</span> Jugador
               </div>
-              <div className="resultados-row-value">María</div>
+              <div className="resultados-row-value">{nombre}</div>
             </div>
 
             <div className="resultados-row resultados-row-score">
               <div className="resultados-row-label">
                 <span style={{ fontSize: '22px' }}>🏆</span> Puntaje Final
               </div>
-              <div className="resultados-row-value">24</div>
+              <div className="resultados-row-value">{puntos}</div>
             </div>
 
             <div className="resultados-row resultados-row-blue">
               <div className="resultados-row-label">
                 <span style={{ fontSize: '22px' }}>🎈</span> Globos Explotados
               </div>
-              <div className="resultados-row-value">12</div>
+              <div className="resultados-row-value">{GloboSX}</div>
             </div>
 
             <div className="resultados-row resultados-row-green">
               <div className="resultados-row-label">
                 <span style={{ fontSize: '22px' }}>😊</span> Globos Positivos
               </div>
-              <div className="resultados-row-value">10</div>
+              <div className="resultados-row-value">{positivosGB}</div>
             </div>
 
             <div className="resultados-row resultados-row-red">
               <div className="resultados-row-label">
                 <span style={{ fontSize: '22px' }}>😰</span> Globos Negros
               </div>
-              <div className="resultados-row-value">2</div>
+              <div className="resultados-row-value">{negativosGB}</div>
             </div>
 
           </div>
 
           {/* Mensaje de felicitación */}
-          <div className="resultados-congrats-box">
-            <div className="resultados-congrats-emoji">🌟</div>
-            <div className="resultados-congrats-title">¡Muy bien!</div>
-            <div className="resultados-congrats-subtitle">¡Sigue practicando para ser un maestro!</div>
-          </div>
+      
+
+        {/* Menos de 0 puntos - Mal rendimiento */}
+        {  puntos <=0&&(
+        <div className="resultados-mensaje-mal">
+          <div className="emoji">😅</div>
+          <h3>¡Cuidado con los globos negros!</h3>
+          <p>Los globos negros restan puntos. ¡Inténtalo de nuevo!</p>
+        </div>)}
+        
+
+        {/* 0 a 10 puntos - Rendimiento medio */}
+        {puntos >0 &&puntos<=10 &&(
+        <div className="resultados-mensaje-medio">
+          <div className="emoji">👍</div>
+          <h3>¡Buen intento!</h3>
+          <p>¡Sigue practicando para mejorar tu puntuación!</p>
+        </div>)}
+        
+
+        {/* 11 a 25 puntos - Buen rendimiento */}
+        {puntos >10 && puntos <=25 &&(
+        <div className="resultados-mensaje-bueno">
+          <div className="emoji">🌟</div>
+          <h3>¡Muy bien!</h3>
+          <p>¡Buen trabajo! Estás mejorando mucho.</p>
+        </div>)}
+ 
+        {/* Más de 25 puntos - Excelente */}
+        {     puntos>25&&(
+        <div className="resultados-mensaje-excelente">
+          <div className="emoji">🏆</div>
+          <h3>¡Eres un maestro explotando globos!</h3>
+          <p>¡Puntuación increíble! Nadie te puede vencer.</p>
+        </div>
+        )}
 
           {/* Botón volver a jugar */}
           <button className="resultados-btn-restart" onClick={botonReiniciar}>

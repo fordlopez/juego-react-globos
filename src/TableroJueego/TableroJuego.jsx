@@ -7,7 +7,7 @@ import './TableroJuego.css';
 
 function TableroJuego() {
 
-  const { celdas, GlobosPantalla, botonExplotar } = React.useContext(GloboContext);
+  const { celdas, GlobosPantalla, botonExplotar ,sumarPuntos} = React.useContext(GloboContext);
 
   return (
     <div className="tablero-area">
@@ -17,14 +17,14 @@ function TableroJuego() {
         {celdas.map((id) => {
 
           const globo = GlobosPantalla.find(
-            (globo) => globo.id === id
+            (globo) => globo.id ==id
           );
 
           return (
             <div
               key={id}
               className="tablero-celda"
-              id={id} onClick={() => botonExplotar(id)}
+              id={id} onClick={() => {botonExplotar(id);   sumarPuntos(globo.puntos)}}
             >
 
               <span className="tablero-id">

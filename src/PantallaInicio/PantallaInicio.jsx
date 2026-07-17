@@ -4,7 +4,7 @@ import { GloboContext } from '../GloboContex/GloboContex';
 function PantallaInicio() {
 
   const {
-    botonIniciar,
+    botonIniciar,nombre, setNombre
   } = React.useContext(GloboContext)
 
   return (
@@ -43,7 +43,8 @@ function PantallaInicio() {
             <input
               type="text"
               className="inicio-input-field"
-              placeholder="Escribe tu nombre aquí..."
+              placeholder="Escribe tu nombre aquí..."   value={nombre}
+                 onChange={(e) => setNombre(e.target.value)}
             />
           </div>
 

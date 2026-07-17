@@ -10,6 +10,7 @@ function PantallaJuego() {
 
   const {
     tiempo,
+    puntos,nombre,GloboSX,
     
   } = React.useContext(GloboContext)
 
@@ -33,26 +34,26 @@ function PantallaJuego() {
             <div className="juego-player-avatar">🧒</div>
             <div>
               <div className="juego-player-name-label">Jugador</div>
-              <div className="juego-player-name-value">María</div>
+              <div className="juego-player-name-value">{nombre}</div>
             </div>
           </div>
 
           {/* Puntaje */}
           <div className="juego-stat-box juego-stat-score">
             <div className="juego-stat-label">⭐ PUNTOS</div>
-            <div className="juego-stat-value">24</div>
+            <div className="juego-stat-value">{puntos}</div>
           </div>
 
           {/* Tiempo */}
           <div className="juego-stat-box juego-stat-time">
             <div className="juego-stat-label">⏱️ TIEMPO</div>
-            <div className="juego-stat-value">{tiempo}s</div>
+            <h1 className="juego-stat-value">{tiempo}</h1>
           </div>
 
           {/* Globos explotados */}
           <div className="juego-stat-box juego-stat-popped">
             <div className="juego-stat-label">🎈 EXPLOTADOS</div>
-            <div className="juego-stat-value">7</div>
+            <div className="juego-stat-value">{GloboSX}</div>
           </div>
 
         </div>

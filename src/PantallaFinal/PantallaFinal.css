@@ -264,3 +264,205 @@
   .resultados-body { padding: 10px; }
   .resultados-title { font-size: 22px; }
 }
+
+
+
+
+
+
+
+.resultados-pantalla {
+  font-family: 'Nunito', 'Comic Sans MS', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #87CEEB 0%, #B8E6FF 40%, #A8E6CF 70%, #6BCB77 100%);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultados-card {
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+}
+
+.resultados-emoji {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.resultados-card h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.resultados-linea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 14px;
+  padding: 12px 18px;
+  margin-bottom: 10px;
+}
+
+.resultados-linea-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.resultados-linea-valor {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.resultados-normal {
+  background: #F8F9FA;
+}
+.resultados-normal .resultados-linea-label { color: #666; }
+.resultados-normal .resultados-linea-valor { color: #4a4a4a; }
+
+.resultados-puntos {
+  background: linear-gradient(135deg, #FFF9E6, #FFE082);
+  border: 2px solid #FFD93D;
+}
+.resultados-puntos .resultados-linea-label { color: #B8860B; }
+.resultados-puntos .resultados-linea-valor { font-size: 26px; color: #CC8800; }
+
+.resultados-azul {
+  background: #F0F8FF;
+}
+.resultados-azul .resultados-linea-label { color: #4D96FF; }
+.resultados-azul .resultados-linea-valor { color: #0066CC; }
+
+.resultados-verde {
+  background: #F0FFF0;
+}
+.resultados-verde .resultados-linea-label { color: #228B22; }
+.resultados-verde .resultados-linea-valor { color: #228B22; }
+
+.resultados-rojo {
+  background: #FFF5F5;
+}
+.resultados-rojo .resultados-linea-label { color: #CC0000; }
+.resultados-rojo .resultados-linea-valor { color: #CC0000; }
+
+/* ============================================
+   MENSAJES DE RESULTADO
+   ============================================ */
+
+/* Mal rendimiento: menos de 0 puntos */
+.resultados-mensaje-mal {
+  background: linear-gradient(135deg, #FFE5E5, #FFCCCC);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px 0;
+  border: 2px solid #FF5D5D;
+}
+.resultados-mensaje-mal .emoji { font-size: 28px; }
+.resultados-mensaje-mal h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #CC0000;
+}
+.resultados-mensaje-mal p {
+  font-size: 13px;
+  color: #993333;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Rendimiento medio: 0 a 10 puntos */
+.resultados-mensaje-medio {
+  background: linear-gradient(135deg, #FFF9E6, #FFF3CD);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px 0;
+  border: 2px solid #FFD93D;
+}
+.resultados-mensaje-medio .emoji { font-size: 28px; }
+.resultados-mensaje-medio h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #B8860B;
+}
+.resultados-mensaje-medio p {
+  font-size: 13px;
+  color: #997A00;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Buen rendimiento: 11 a 25 puntos */
+.resultados-mensaje-bueno {
+  background: linear-gradient(135deg, #E5F5E5, #D4EDDA);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px 0;
+  border: 2px solid #6BCB77;
+}
+.resultados-mensaje-bueno .emoji { font-size: 28px; }
+.resultados-mensaje-bueno h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #228B22;
+}
+.resultados-mensaje-bueno p {
+  font-size: 13px;
+  color: #4a7c4a;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Excelente: más de 25 puntos */
+.resultados-mensaje-excelente {
+  background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px 0;
+  border: 2px solid #C77DFF;
+}
+.resultados-mensaje-excelente .emoji { font-size: 28px; }
+.resultados-mensaje-excelente h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #7B1FA2;
+}
+.resultados-mensaje-excelente p {
+  font-size: 13px;
+  color: #6A1B9A;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.resultados-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #4D96FF, #357ABD);
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s;
+}
+
+.resultados-btn:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 500px) {
+  .resultados-card { padding: 20px; }
+  .resultados-card h2 { font-size: 24px; }
+}
