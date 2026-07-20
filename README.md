@@ -37,6 +37,9 @@ npm run dev
 
 Luego abre en el navegador la URL que indique la terminal (por defecto `http://localhost:5173`).
 
+## Ejecutar con GitHub Pages
+abre en el navegador y escribe la URL `https://fordlopez.github.io/juego-react-globos/`
+
 ## Conceptos de React utilizados
 
 - **Componentes funcionales** (`PantallaInicio`, `PantallaJuego`, `PantallaFinal`, `TableroJuego`, `GlabosIntividuales`).
